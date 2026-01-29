@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# LivesInErie — a blazing fast website developed with TS + Tailwindcss
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+![Vite](https://img.shields.io/badge/vite-5.x-646CFF?logo=vite)
+![React](https://img.shields.io/badge/react-18.x-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-5.x-3178C6?logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-3.x-38BDF8?logo=tailwindcss&logoColor=white)
+[![Build](https://img.shields.io/github/actions/workflow/status/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/ci.yml)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions)
+[![Docs](https://img.shields.io/badge/docs-available-blue)](https://YOUR_DOCS_URL)
+![ESLint](https://img.shields.io/badge/code_style-eslint-4B32C3?logo=eslint)
+![Prettier](https://img.shields.io/badge/code_style-prettier-F7B93E?logo=prettier&logoColor=black)
+![PNPM](https://img.shields.io/badge/pnpm-supported-F69220?logo=pnpm)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![LOGO](website/public/test.png)
 
-## React Compiler
+**LivesInErie** is a modern frontend web app built to support and showcase life in the City of Erie.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+The goal of this project is to bring together useful information in one place, including:
+- Local events and activities  
+- Student life and education resources  
+- Housing options  
+- Job opportunities  
+- Community highlights  
 
-## Expanding the ESLint configuration
+The app is designed to be fast, simple, and easy to contribute to.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Install
+make sure you have nodejs in your computers
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/6namdang/LivesInErie.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# UPDATES
+## JAN 26
+- **Finishing on the landing page, setting up all lintings and CI/CD pipelines for deployment and testing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# In Progress
+## Jan 28
+- [x] Landing page
+- [x] Linting setup
+- [x] CI/CD pipelines
+- [ ] Expanding site content
+- [ ] Improving accessibility
+- [ ] Performance optimizations
+- [ ] Mobile responsiveness
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack
+
+- Vite
+- React
+- TypeScript
+- Tailwind CSS
+- ESLint
+- Prettier
+- pnpm or npm
+
+---
