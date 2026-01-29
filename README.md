@@ -12,7 +12,7 @@
 ![PNPM](https://img.shields.io/badge/pnpm-supported-F69220?logo=pnpm)
 
 
-![LOGO](website/public/test.png)
+![LOGO](./public/test.png)
 
 **LivesInErie** is a modern frontend web app built to support and showcase life in the City of Erie.
 
@@ -56,4 +56,3 @@ git clone https://github.com/6namdang/LivesInErie.git
 - Prettier
 - pnpm or npm
 
----
