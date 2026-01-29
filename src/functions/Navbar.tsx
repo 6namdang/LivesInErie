@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
 
@@ -22,7 +21,6 @@ export const Navbar = () => {
 
     useEffect(() => {
         setIsOpen(false);
-        setActiveDropdown(null);
     }, [location]);
 
     const isActive = (path?: string) => location.pathname === path;
