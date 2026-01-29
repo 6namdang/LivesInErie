@@ -1,0 +1,8 @@
+.hamburger { display: none; }
+.desktop { display: block; }
+.mobile { position: fixed; inset: 0; background: white; }
+
+@media (max-width: 768px) {
+  .desktop { display: none; }
+  .hamburger { display: block; }
+}
