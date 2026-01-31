@@ -5,7 +5,7 @@
 ![React](https://img.shields.io/badge/react-18.x-61DAFB?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-5.x-3178C6?logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-3.x-38BDF8?logo=tailwindcss&logoColor=white)
-[![Build](https://img.shields.io/github/actions/workflow/status/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/ci.yml)](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/6namdang/LivesInErie/ci.yml)](https://github.com/6namdang/LivesInErie/deployments)
 [![Docs](https://img.shields.io/badge/docs-available-blue)](https://YOUR_DOCS_URL)
 ![ESLint](https://img.shields.io/badge/code_style-eslint-4B32C3?logo=eslint)
 ![Prettier](https://img.shields.io/badge/code_style-prettier-F7B93E?logo=prettier&logoColor=black)
