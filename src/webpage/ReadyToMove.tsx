@@ -1,56 +1,28 @@
+import { useState } from "react"
+import Modal from "../functions/Modal";
+import ItemModal from "../functions/ItemModal";
+import { useNavigate } from "react-router";
 export default function ReadyToMove() {
-    const row = 4;
-
+    const [open, setOpen] = useState<boolean>(false);
+    const navigate = useNavigate();
     return (
-        <div className="grid place-items-center mt-45 px-4">
-            <div className="w-full max-w-md bg-neutral-secondary-medium p-8 rounded-base border border-default-medium shadow-sm">
-                <h2 className="text-2xl font-bold text-heading mb-6">Ready to move?</h2>
-                
-                <form className="space-y-5">
-                    {/* Name Field */}
-                    <div>
-                        <label htmlFor="name" className="block mb-2 text-sm font-medium text-heading">Full Name</label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            className="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body" 
-                            placeholder="John Doe" 
-                            required 
-                        />
-                    </div>
-
-                    {/* Email Field */}
-                    <div>
-                        <label htmlFor="email" className="block mb-2 text-sm font-medium text-heading">Email Address</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            className="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body" 
-                            placeholder="name@company.com" 
-                            required 
-                        />
-                    </div>
-
-                    {/* Message Field */}
-                    <div>
-                        <label htmlFor="message" className="block mb-2 text-sm font-medium text-heading">Your message</label>
-                        <textarea 
-                            id="message" 
-                            rows={row} 
-                            className="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body" 
-                            placeholder="Tell us about your project..."
-                        ></textarea>
-                    </div>
-
-                    {/* Submit Button */}
-                    <button 
-                        type="submit" 
-                        className="w-full text-white bg-brand hover:bg-brand-dark focus:ring-4 focus:outline-none focus:ring-brand-light font-medium rounded-base text-sm px-5 py-3.5 text-center transition-colors"
-                    >
-                        Send Message
-                    </button>
-                </form>
+        <div>
+            <h1 className="text-center mt-25 text-[60px]">Ready to move?</h1>
+            <h2 className="text-center text-[30px]">Please pick one </h2>
+            <div className="grid grid-cols-2 gap-4 m-10 sm:grid-col-1">
+                <div className="p-6 shadow-lg rounded transform transition hover:-translate-y-2 cursor-pointer"
+                onClick={() => setOpen(true)}>
+                    <h2 className="text-xl font-bold mb-2 text-center">
+                        International</h2>
+                </div>
+                <div className="p-6 shadow-lg rounded transform transition hover:-translate-y-2 cursor-pointer" onClick={() => navigate('/usa')}>
+                    <h2 className="text-xl font-bold mb-2 text-center">U.S Citizen</h2>
+                </div>
             </div>
+            
+            <Modal open={open} onClose={() => setOpen(false)}>
+                <ItemModal />
+            </Modal>
         </div>
-    );
+    )
 }

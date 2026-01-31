@@ -10,7 +10,7 @@ export default function JobPage() {
     // --- Pagination state ---
     const [page, setPage] = useState(1);
     const [size] = useState(10);
-    const [totalPages] = useState(5); // assume 10 pages for now; can get from backend later
+    const [totalPages] = useState(5);
 
     // --- Fetch jobs from backend ---
     const fetchJobs = () => {

@@ -1,9 +1,19 @@
 import { Link } from 'react-router';
 import { colleges, images } from '../types/college';
+import { useEffect } from 'react';
 
 export const HomePage = () => {
-
-
+useEffect(() => {
+  const worker = new SharedWorker(new URL('../functions/Ping.js', import.meta.url));
+  worker.port.onmessage = (e) => {
+    if (e.data.status === 'success') {
+      console.log('Fetch succeeded!');
+    }
+  };
+  
+  worker.port.start();
+  return () => worker.port.close();
+}, []);
   return (
     <div className="flex flex-col w-full bg-[#fdfcf9] font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white text-sm md:text-base">
       
