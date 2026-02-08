@@ -15,7 +15,7 @@ export default function JobPage() {
     // --- Fetch jobs from backend ---
     const fetchJobs = () => {
         setLoading(true);
-        http.get(`/jobs?page=${page}&size=${size}`)
+        http.get(`/api/jobs?page=${page}&size=${size}`)
             .then(response => {
                 setJobs(response.data);
                 setLoading(false);

@@ -14,6 +14,7 @@ export const navItems: Menu[] = [
   {
     label: 'Live',
     subItems: [
+      {label : 'Community Directory', to : '/community'},
       { label: 'Events & Activities Right Now', to: '/events' },
       { label: 'Housing/Rent near me', to: '/housing' },
       { label: 'Hike & Trails', to: '/hikes' },
