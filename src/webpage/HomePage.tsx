@@ -399,46 +399,98 @@ export const HomePage = () => {
       </section>
 
       {/* 12. CALL TO ACTION */}
-      <section className="py-32 px-6 md:px-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
+<section className="relative py-20 lg:py-32 bg-[#ffffff] overflow-hidden">
+  <div className="max-w-[1400px] mx-auto px-6 lg:px-16 relative">
+    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      
+      {/* Visual Component - Left Column */}
+      <div className="w-full lg:w-1/2 relative group">
+        {/* Floating Arrows SVG from your source code */}
+        <div className="absolute -top-12 -left-8 w-44 md:w-56 z-20 pointer-events-none transform -rotate-12 transition-transform duration-700 group-hover:rotate-0">
+          <img 
+            src="https://liveinames.com/wp-content/uploads/2025/01/arrows-2-05.svg" 
+            alt="Decorative arrows" 
+            className="w-full h-auto opacity-90 drop-shadow-xl"
+          />
         </div>
-        
-        <div className="relative max-w-5xl mx-auto text-center space-y-8">
-          <p className="text-[10px] uppercase tracking-[0.4em] font-black mb-4">Make The Move</p>
-          <h2 className="text-6xl md:text-8xl font-black uppercase italic leading-[0.85]">
-            Your <br/> Next Chapter <br/> Starts Here
-          </h2>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed opacity-90">
-            Join the growing community of people discovering that Erie isn't just affordable—it's a place where you can actually build the life you want.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <Link to="/jobs" className="bg-white text-blue-900 px-10 py-5 rounded-full text-sm font-black uppercase tracking-wider hover:bg-gray-100 transition-all duration-300 hover:scale-105">
-              Browse Jobs
-            </Link>
-            <Link to="/ready-to-move" className="border-2 border-white text-white px-10 py-5 rounded-full text-sm font-black uppercase tracking-wider hover:bg-white hover:text-blue-900 transition-all duration-300">
-              Request Info Pack
-            </Link>
-          </div>
 
-          <div className="grid grid-cols-3 gap-8 pt-16 max-w-3xl mx-auto">
-            <div>
-              <p className="text-4xl font-black mb-2">96K</p>
-              <p className="text-xs uppercase tracking-wider opacity-70">Population</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black mb-2">40mi</p>
-              <p className="text-xs uppercase tracking-wider opacity-70">Of Coastline</p>
-            </div>
-            <div>
-              <p className="text-4xl font-black mb-2">229</p>
-              <p className="text-xs uppercase tracking-wider opacity-70">Years of History</p>
-            </div>
-          </div>
+        {/* Hero Image with custom border-radius and shadow */}
+        <div className="relative z-10 rounded-[3rem] overflow-hidden aspect-[4/4.5] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] transform transition-all duration-500 group-hover:scale-[1.01]">
+          <img 
+            src="https://images.unsplash.com/photo-1545156521-77bd85671d30?q=80&w=1200" 
+            alt="Erie Waterfront" 
+            className="w-full h-full object-cover"
+          />
+          {/* Subtle overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent opacity-60" />
         </div>
-      </section>
+
+        {/* Background decorative shape to mimic Elementor motion elements */}
+        <div className="absolute -bottom-6 -right-6 w-full h-full bg-blue-50 rounded-[3rem] -z-10 translate-x-4 translate-y-4" />
+      </div>
+
+      {/* Content Component - Right Column */}
+      <div className="w-full lg:w-1/2 flex flex-col items-start text-left space-y-8">
+        <div className="space-y-2">
+          <p className="text-blue-600 font-black uppercase tracking-[0.4em] text-[10px] md:text-xs">
+            Experience the 814
+          </p>
+          <h2 className="text-5xl md:text-7xl lg:text-[85px] font-[900] text-[#1a1a1a] uppercase italic leading-[0.85] tracking-tighter">
+            Explore <br />
+            <span className="text-blue-600">The Lake</span>
+          </h2>
+        </div>
+
+        <div className="max-w-xl">
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium opacity-90">
+            Erie is your destination for fun and entertainment, offering endless opportunities to play. 
+            Enjoy a vibrant calendar of events, from local festivals to live performances at the Warner Theatre. 
+            Explore unique boutiques downtown, or cheer on the SeaWolves at UPMC Park. 
+            Savor diverse dining options, from bayfront seafood to cozy local cafes. 
+            Whether you’re catching a show, shopping for something special, or indulging in local cuisine, Erie has something for everyone.
+          </p>
+        </div>
+
+        {/* Caret Buttons (View-Only) */}
+        <div className="flex flex-wrap gap-2.5 pt-4">
+          {[
+            { label: "Play in Erie", primary: true },
+            { label: "Attractions" },
+            { label: "Calendar" },
+            { label: "Sports & Outdoors" },
+            { label: "Itineraries" },
+            { label: "Magazine Features" }
+          ].map((btn, idx) => (
+            <div 
+              key={idx}
+              className={`
+                flex items-center gap-2 px-6 py-4 rounded-full text-[10px] font-black uppercase tracking-[0.15em] transition-all duration-300
+                ${btn.primary 
+                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' 
+                  : 'bg-[#141414] text-white hover:bg-blue-600'}
+              `}
+            >
+              <span className="w-4 h-4 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.374 41.655" className="w-full h-full fill-current">
+                  <path d="M-14.929-38.172a1.67,1.67,0,0,0-.831,1.455V-27.3a1.634,1.634,0,0,0,.847,1.455,1.66,1.66,0,0,0,1.679,0l29-16.739a1.653,1.653,0,0,0,.847-1.455v-4.812a1.616,1.616,0,0,0-.847-1.455l-29-16.739a1.66,1.66,0,0,0-1.679,0,1.616,1.616,0,0,0-.847,1.455v9.416a1.634,1.634,0,0,0,.847,1.455L-3.1-47.892a1.633,1.633,0,0,1,.831,1.455,1.634,1.634,0,0,1-.847,1.455Z" transform="translate(15.76 67.272)" />
+                </svg>
+              </span>
+              {btn.label}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Large Ghost Typography Background Decor */}
+  <div className="absolute -bottom-16 -right-16 select-none pointer-events-none opacity-[0.04]">
+    <span className="text-[25rem] font-black italic uppercase leading-none text-blue-900">
+      ERIE
+    </span>
+  </div>
+</section>
+
 
       {/* FOOTER */}
       <footer className="bg-[#0a0a0a] text-white pt-24 pb-8 px-6 md:px-20 border-t border-white/5">

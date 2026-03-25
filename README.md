@@ -45,6 +45,7 @@ git clone https://github.com/6namdang/LivesInErie.git
 - [ ] Improving accessibility
 - [ ] Performance optimizations
 - [ ] Mobile responsiveness
+- [ ] Logging requests and params, handling exceptions and errors, and build a observe and monitoring pipeline
 
 ## Tech Stack
 
