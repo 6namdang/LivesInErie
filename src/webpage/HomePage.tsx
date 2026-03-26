@@ -1,36 +1,13 @@
 import { Link } from 'react-router';
 import { colleges, images } from '../types/college';
+
 import WeatherDashboard from '../functions/WeatherDashboard';
+import Hero from '../components/Hero';
 
 export const HomePage = () => {
   return (
     <div className="flex flex-col w-full bg-[#fdfcf9] font-sans overflow-x-hidden selection:bg-blue-500 selection:text-white text-sm md:text-base">
-      
-      {/* 1. HERO SECTION */}
-      <section className="relative h-[85vh] flex items-center justify-start text-white px-6 md:px-20">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms] scale-110 hover:scale-100" 
-            style={{ backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/3/38/Erie_PA_skyline_from_tower_observation_deck_%28cropped%29.jpg')` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
-        </div>
-        
-        <div className="relative z-10 max-w-4xl space-y-6">
-          <p className="uppercase tracking-[0.4em] text-[9px] font-black text-blue-400 mb-2 animate-slide-up">Establish 1795 — Pennsylvania</p>
-          <h1 className="text-6xl md:text-9xl font-black leading-[0.85] tracking-tighter mb-4 italic uppercase">
-            ERIE <span className="text-transparent font-outline-2 block md:inline">PA</span>
-          </h1>
-          <p className="text-lg md:text-xl font-light max-w-md leading-relaxed opacity-70">
-            A coastal frontier where the Great Lakes spirit meets modern innovation.
-          </p>
-          <div className="flex gap-4 pt-4">
-            <button className="bg-white text-black px-8 py-4 rounded-full text-xs font-bold hover:bg-blue-600 hover:text-white transition-all duration-500 hover:tracking-widest uppercase">
-              EXPLORE THE LAKE
-            </button>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       {/* 2. THE EDITORIAL SCROLL */}
       <section className="py-16 bg-white">
