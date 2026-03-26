@@ -137,36 +137,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* 5. LIFE ON THE LAKE */}
-      <section className="relative py-24 bg-[#0a0a0a] text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-6xl font-black italic uppercase leading-[0.85]">The <br/> Coastal <br/> <span className="text-blue-500">Life</span></h2>
-              <p className="text-lg text-gray-400 leading-relaxed font-light max-w-sm">
-                Presque Isle State Park isn't just a park; it's a way of life. Seven miles of pristine sand and the world's best sunsets. 
-              </p>
-              <div className="flex gap-12">
-                <div>
-                  <p className="text-5xl font-black italic">4M</p>
-                  <p className="text-[9px] uppercase font-bold tracking-[0.2em] text-blue-500 mt-2">Annual Visitors</p>
-                </div>
-                <div>
-                  <p className="text-5xl font-black italic">11mi</p>
-                  <p className="text-[9px] uppercase font-bold tracking-[0.2em] text-blue-500 mt-2">Hiking Trails</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="space-y-3">
-               {['Art & Culture', 'Craft Breweries', 'Sports Events'].map((text, i) => (
-                 <div key={i} className="group p-6 rounded-xl border border-white/5 hover:bg-white hover:text-black transition-all duration-500 cursor-pointer flex justify-between items-center">
-                   <h4 className="text-xl font-black uppercase italic tracking-tighter">{text}</h4>
-                   <span className="text-lg">→</span>
-                 </div>
-               ))}
-            </div>
-        </div>
-      </section>
+
 
       {/* 6. HOUSING & AFFORDABILITY */}
       <section className="py-24 px-6 md:px-20 bg-white">
@@ -240,7 +211,7 @@ export const HomePage = () => {
                 vibe: 'Urban Revival',
                 description: 'Walkable streets, historic architecture, and a thriving arts scene. Loft living meets waterfront access.',
                 price: '$125k avg',
-                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800'
+                image: 'https://images.squarespace-cdn.com/content/v1/64890c08b14f8044b088a7db/309dd239-05f5-4c22-8bc6-01ce7b1d60ea/downtownerie_06302023-7.jpg'
               },
               { 
                 name: 'Millcreek Township', 
@@ -284,6 +255,7 @@ export const HomePage = () => {
 
 
       {/* 9. TRANSPORTATION & ACCESS */}
+{/* 9. TRANSPORTATION & ACCESS - UPDATED WITH LINKS */}
       <section className="py-24 px-6 md:px-20 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
@@ -315,34 +287,47 @@ export const HomePage = () => {
               { 
                 title: 'Erie International Airport', 
                 subtitle: 'ERI', 
-                description: 'Daily flights to major hubs including Chicago, Detroit, and Charlotte. TSA PreCheck available.' 
+                description: 'Daily flights to major hubs including Chicago, Detroit, and Charlotte. TSA PreCheck available.',
+                url: 'https://www.erieairport.org/'
               },
               { 
                 title: 'I-90 Interstate', 
                 subtitle: 'Coast to Coast', 
-                description: 'Direct highway access spanning from Seattle to Boston. 15 minutes to highway from downtown.' 
+                description: 'Direct highway access spanning from Seattle to Boston. 15 minutes to highway from downtown.',
+                url: null // Kept static as requested
               },
               { 
                 title: 'EMTA Public Transit', 
                 subtitle: '26 Routes', 
-                description: 'Comprehensive bus system covering Erie County. Affordable, reliable, and expanding.' 
+                description: 'Comprehensive bus system covering Erie County. Affordable, reliable, and expanding.',
+                url: 'https://ride-the-e.com/apps/'
               }
-            ].map((item, i) => (
-              <div key={i} className="group p-6 bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl hover:scale-105 transition-all duration-500 cursor-pointer">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <p className="text-[9px] uppercase tracking-[0.3em] text-blue-400 font-bold mb-1">{item.subtitle}</p>
-                    <h4 className="text-xl font-black uppercase italic">{item.title}</h4>
+            ].map((item, i) => {
+              const Wrapper = item.url ? 'a' : 'div';
+              return (
+                <Wrapper 
+                  key={i} 
+                  href={item.url || undefined}
+                  target={item.url ? "_blank" : undefined}
+                  rel={item.url ? "noopener noreferrer" : undefined}
+                  className={`group block p-6 bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl border border-white/5 transition-all duration-500 ${item.url ? 'hover:scale-[1.02] cursor-pointer hover:border-blue-500/50' : ''}`}
+                >
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <p className="text-[9px] uppercase tracking-[0.3em] text-blue-400 font-bold mb-1">{item.subtitle}</p>
+                      <h4 className="text-xl font-black uppercase italic">{item.title}</h4>
+                    </div>
+                    {item.url && (
+                      <span className="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform text-blue-400">↗</span>
+                    )}
                   </div>
-                  <span className="text-2xl group-hover:rotate-45 transition-transform">→</span>
-                </div>
-                <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
-              </div>
-            ))}
+                  <p className="text-sm text-gray-400 leading-relaxed">{item.description}</p>
+                </Wrapper>
+              );
+            })}
           </div>
         </div>
       </section>
-
       {/* 10. SEASONS & CLIMATE */}
       <section className="py-24 px-6 md:px-20 bg-[#0a0a0a] text-white">
         <WeatherDashboard />

@@ -14,11 +14,17 @@ export const navItems: Menu[] = [
   {
     label: 'Live',
     subItems: [
-      {label : 'Community Directory', to : '/community'},
-      { label: 'Events & Activities Right Now', to: '/events' },
-      { label: 'Housing/Rent near me', to: '/housing' },
+      {label : 'Companies Directory', to : '/community'},
+      { label: 'Events', to: '/events' },
+      { label: 'Housing', to: '/housing' },
       { label: 'Hike & Trails', to: '/hikes' },
       { label : "Student Life", to : '/students'}
+    ]
+  },
+  {
+    label : 'Startup',
+    subItems : [
+      {label : "Create a startup", to : '/startup'}
     ]
   },
   {
