@@ -18,6 +18,7 @@ function App() {
                 <Route path="/ready-to-move" element={<ReadyToMove />} />
                 <Route path="/usa" element={<ReadyToMoveUS />} />
                 <Route path="/others" element={<ReadyToMoveOther />} />
+                
             </Routes>
         </BrowserRouter>
     )
